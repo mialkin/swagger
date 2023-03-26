@@ -1,14 +1,17 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Swashbuckle.AspNetCore.Annotations;
 
 namespace Swagger.Products;
 
 [ApiController]
 [Route("[controller]")]
+[SwaggerTag("Products controller description")]
 public class ProductsController : ControllerBase
 {
     [HttpGet("List")]
+    [SwaggerOperation("List products")]
     public IActionResult List()
     {
         var products = new List<Product>
@@ -18,5 +21,12 @@ public class ProductsController : ControllerBase
         };
 
         return Ok(products);
+    }
+
+    [HttpPost("Create")]
+    [SwaggerOperation("Create product")]
+    public IActionResult Create(ProductDto dto)
+    {
+        return Ok(dto);
     }
 }
