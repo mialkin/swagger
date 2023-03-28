@@ -21,7 +21,7 @@ public class ProductsController : ControllerBase
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public IActionResult List()
+    public ActionResult<List<Product>> List()
     {
         var products = new List<Product>
         {
@@ -29,7 +29,7 @@ public class ProductsController : ControllerBase
             new(new Guid("6aef02a1-c60a-4bd1-9f4d-c43c3d911f9b"), "Tooth paste")
         };
 
-        return Ok(products);
+        return products;
     }
 
     /// <summary>
@@ -44,11 +44,11 @@ public class ProductsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public IActionResult Create(ProductDto dto)
+    public ActionResult<ProductDto> Create(ProductDto dto)
     {
-        return Ok(dto);
+        return dto;
     }
-    
+
     /// <summary>
     /// Update endpoint description
     /// </summary>
