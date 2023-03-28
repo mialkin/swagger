@@ -1,3 +1,6 @@
+using System;
+using System.IO;
+using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -10,7 +13,17 @@ services.AddSwaggerGen(options =>
 {
     options.EnableAnnotations();
     options.DescribeAllParametersInCamelCase();
+    options.IncludeXmlComments(GetXmlCommentsFilePath());
+
+    string GetXmlCommentsFilePath()
+    {
+        var basePath = AppContext.BaseDirectory;
+        var fileName = typeof(Program).GetTypeInfo().Assembly.GetName().Name + ".xml";
+        // Don't forget to check "Generate XML documentation" checkbox in project's properties
+        return Path.Combine(basePath, fileName);
+    }
 });
+
 services.AddRouting(options => options.LowercaseUrls = true);
 
 var app = builder.Build();
