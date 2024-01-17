@@ -8,7 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
 services.AddControllers();
-services.AddEndpointsApiExplorer();
+services.AddRouting(options => options.LowercaseUrls = true);
+
 services.AddSwaggerGen(options =>
 {
     options.EnableAnnotations();
@@ -24,18 +25,16 @@ services.AddSwaggerGen(options =>
     }
 });
 
-services.AddRouting(options => options.LowercaseUrls = true);
+var application = builder.Build();
 
-var app = builder.Build();
-
-app.UseSwagger();
-app.UseSwaggerUI(options =>
+application.UseSwagger();
+application.UseSwaggerUI(options =>
 {
     options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
     options.RoutePrefix = string.Empty;
 });
 
-app.UseRouting();
-app.UseEndpoints(x => { x.MapControllers(); });
+application.MapControllers();
+application.UseRouting();
 
-app.Run();
+application.Run();
