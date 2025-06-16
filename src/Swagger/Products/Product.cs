@@ -1,5 +1,3 @@
-using System;
-
 namespace Swagger.Products;
 
 /// <summary>

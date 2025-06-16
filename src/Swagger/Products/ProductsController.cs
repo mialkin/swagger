@@ -1,12 +1,12 @@
-using System;
-using System.Collections.Generic;
 using System.Net.Mime;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace Swagger.Products;
 
+/// <summary>
+/// Product controller
+/// </summary>
 [ApiController]
 [Route("[controller]")]
 [SwaggerTag("Products controller description")]
