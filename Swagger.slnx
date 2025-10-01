@@ -1,0 +1,7 @@
+<Solution>
+    <Folder Name="/Solution items/">
+        <File Path=".gitignore"/>
+        <File Path="readme.md"/>
+    </Folder>
+    <Project Path="src/Swagger/Swagger.csproj"/>
+</Solution>
