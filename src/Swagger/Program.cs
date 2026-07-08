@@ -5,7 +5,6 @@ var builder = WebApplication.CreateBuilder(args);
 var services = builder.Services;
 
 services.AddControllers();
-services.AddRouting(options => options.LowercaseUrls = true);
 
 services.AddSwaggerGen(options =>
 {

@@ -16,7 +16,7 @@ public class ProductsController : ControllerBase
     /// List endpoint description
     /// </summary>
     /// <returns>List endpoint return value description</returns>
-    [HttpGet("list")]
+    [HttpGet("List")]
     [SwaggerOperation("List products")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -37,7 +37,7 @@ public class ProductsController : ControllerBase
     /// </summary>
     /// <param name="dto">DTO description</param>
     /// <returns>Create endpoint return value description</returns>
-    [HttpPost("create")]
+    [HttpPost("Create")]
     [SwaggerOperation("Create product")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]
@@ -55,7 +55,7 @@ public class ProductsController : ControllerBase
     /// <param name="description" example="Shower gel">Product description</param>
     /// <param name="price" example="19.99">Price per unit</param>
     /// <returns>Update endpoint return value description</returns>
-    [HttpPost("update")]
+    [HttpPost("Update")]
     [SwaggerOperation("Update product")]
     [Produces(MediaTypeNames.Application.Json)]
     [ProducesResponseType(StatusCodes.Status200OK)]
