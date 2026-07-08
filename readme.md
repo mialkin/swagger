@@ -9,7 +9,7 @@ API.
 
 ## Prerequisites
 
-- [↑ .NET 9](https://dotnet.microsoft.com/en-us/download/dotnet/9.0)
+- [↑ .NET 10](https://dotnet.microsoft.com/en-us/download/dotnet/10.0)
 
 ## Run
 
